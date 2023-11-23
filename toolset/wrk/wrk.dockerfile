@@ -1,6 +1,5 @@
 # docker build -f wrk.dockerfile -t points/wrk .
-# docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock --name=points-wrk --net points points/wrk
-# wrk -t8 -c512 -d15s -s createAccount.lua http://points-service:8080    
+# docker run -it --rm --name=points-wrk --net points points/wrk -t8 -c512 -d15s -s transaction.lua http://points-service:8080
 
 FROM williamyeh/wrk:4.0.2
 
